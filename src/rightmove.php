@@ -1,5 +1,6 @@
 <?php
 
+  require_once('property.php');
   require_once('../lib/Smarty-3.0.8/libs/Smarty.class.php');
 
   class RightMove {
@@ -8,7 +9,7 @@
       $file = tempnam("/tmp", "today-date.BLM");
       $smarty = new Smarty;
       $smarty->assign("agent_id", $agent_id);
-      $smarty->assign("agent_id", $branch_id);
+      $smarty->assign("branch_id", $branch_id);
       $smarty->assign("property_count", count($properties));
       $smarty->assign("generated_date", date(DATE_RFC822));
       $smarty->assign("properties", $properties);
