@@ -1,11 +1,13 @@
 <?php
 
-  require_once('property.php');
-  require_once('../lib/Smarty-3.0.8/libs/Smarty.class.php');
+  /** @define "/home/okouam/Work/rightmove/src" "VALUE" */
+
+  require_once(dirname(__FILE__) . '/property.php');
+  require_once(dirname(__FILE__) . "/../lib/Smarty-3.0.8/libs/Smarty.class.php");
 
   class RightMove {
 
-    public static function createPackage($properties, $agent_id, $branch_id) {
+    public static function createPackageData($properties, $agent_id, $branch_id) {
       $file = tempnam("/tmp", "today-date.BLM");
       $smarty = new Smarty;
       $smarty->assign("agent_id", $agent_id);
@@ -19,6 +21,19 @@
       fclose($handle);
       return $file;
     }
+
+    public static function checkPackageMedia($properties) {
+
+    }
+
+    public static function createPackage($properties, $agent_id, $branch_id) {
+
+    }
+
+    public static function send($host, $username, $password, $package) {
+    
+    }
+
   }
 
 ?>

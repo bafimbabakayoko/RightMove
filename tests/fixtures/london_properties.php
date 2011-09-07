@@ -1,8 +1,11 @@
 <?php
 
   $mayfair_flat = new Property();
-  $mayfair_flat->address_1 = "135a Stroud Green Road";
-  $mayfair_flat->address_2 = "Finsbury Park";
+  $mayfair_flat->setAddress("135a", "Stroud Green Road", "N4 3PX", "London");
+  $mayfair_flat->setFeatures(array("Luxury first floor flat", "THREE BEDROOMS", "South facing sun terrace"));
+  $mayfair_flat->summary = "sdfsdfsdfsdfsdf";
+  $mayfair_flat->description = "sfsdfsdfsdfsdf";
+  $mayfair_flat->status_id = 0;
 
   $brixton_house = new Property();
 

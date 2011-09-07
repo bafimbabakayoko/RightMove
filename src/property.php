@@ -2,7 +2,6 @@
 
   class Property
   {
-    public $agent_ref;
     public $address_1;
     public $address_2;
     public $town;
@@ -13,6 +12,11 @@
     public $feature_3;
     public $feature_4;
     public $feature_5;
+    public $feature_9;
+    public $feature_6;
+    public $feature_7;
+    public $feature_8;
+    public $feature_10;
     public $summary;
     public $prop_sub_id;
     public $description;
@@ -28,10 +32,22 @@
     public $trans_type_id;
     public $media_image_1;
 
-    public function __construct() {
+    public function setFeatures($features) {
+      for($i = 0; $i < count($features); $i++) {
+          $this->{"feature_$i"} = $features[$i];
+      }
     }
 
-
+    public function setAddress($address_1, $address_2, $postcode, $town) {
+      $this->address_1 = trim($address_1);
+      $this->address_2 = trim($address_2);
+      $parts = explode(" ", trim($postcode));
+      $this->postcode_1 = trim($parts[0]);
+      $this->postcode_2 = trim($parts[1]);
+      $this->town = trim($town);
+      $display_address = array($this->address_1, $this->address_2, "$this->town $this->postcode_1  $this->postcode_2");
+      $this->display_address = join(', ', $display_address);
+    }
 
   }
 
